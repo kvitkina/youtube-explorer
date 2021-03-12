@@ -6,7 +6,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   transition: box-shadow .3s;
   position: relative;
 }
@@ -15,7 +14,7 @@
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
 }
 
-.card__video {
+.card__image {
   height: 272px;
   border-radius: 16px 16px 0 0;
   object-fit: cover;
@@ -50,7 +49,7 @@
   line-height: 30px;
   color: #1A1B22;
   margin: 0 0 16px 0;
-  /* max-height: 90px; */
+  cursor: pointer;
 }
 
 .card__subtitle {
@@ -62,7 +61,6 @@
   margin: 0;
   text-overflow: ellipsis;
   overflow: hidden;
-  /* max-height: 110px; */
 }
 
 .card__link {
@@ -82,7 +80,6 @@
   .card__title {
     font-size: 22px;
     line-height: 24px;
-    /* max-height: 72px; */
     margin-bottom: 10px;
   }
   .card__description {
@@ -91,9 +88,6 @@
   .card__text-container {
     min-height: 170px;
     margin-bottom: 12px;
-  }
-  .card__subtitle {
-    /* max-height: 88px; */
   }
 }
 

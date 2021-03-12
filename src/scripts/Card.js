@@ -19,7 +19,7 @@ export class Card {
     // this._setEventListeners()
 
     this._element.querySelector('.card__title').textContent = this._title
-    this._element.querySelector('.card__link').href = this._link
+    this._element.querySelector('.card__image').src = this._link
     this._element.querySelector('.card__subtitle').textContent = this._author
     this._element.querySelector('.card__date').textContent = this._date
 
