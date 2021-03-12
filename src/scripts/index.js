@@ -12,39 +12,60 @@ export const youtubeApi = new YoutubeApi ({
   }
 })
 
+const renderCard = (item) => {
+  const card = new Card(item, '.elements__template')
+  const element = card.generateCard()
+  elementsList.prepend(element)
+}
+
 const handleSearchVideos = (keyword) => {
   youtubeApi.getVideos(keyword)
   .then((res) => {
-    console.log(res)
-    //создание карточки
-    const createCardFunction = (data) => {
-      const card = new Card({data,
-        // handleCardClick: () => {
-        //   popupWithImage.open(data)
-        // },
-      }, '.elements__template')
-      const element = card.generateCard()
-      cardsList.addItem(element)
-    }
-
-    //создание экземпляра класса для отрисовки карточек на странице
-    const cardsList = new Section ({
-      items: res.items,
-      renderer: (data => {
-      createCardFunction(data)
-      })
-    }, elementsList)
-      return cardList
+    res.items.forEach(item => {
+      renderCard(item)
     })
-  .then((res) => {
-    const { cardsList } = res
-    cardsList.renderItems()
   })
-  .catch((err) => console.log(err))
 }
-
 searchButton.addEventListener('submit', (e) => {
-  e.preventDefault()
-  const keyword = input.value
-  handleSearchVideos(keyword)
-})
+    e.preventDefault()
+    const keyword = input.value
+    handleSearchVideos(keyword)
+  })
+
+
+// const handleSearchVideos = (keyword) => {
+//   youtubeApi.getVideos(keyword)
+//   .then((res) => {
+//     console.log(res)
+//     //создание карточки
+//     const createCardFunction = (data) => {
+//       const card = new Card({data,
+//         // handleCardClick: () => {
+//         //   popupWithImage.open(data)
+//         // },
+//       }, '.elements__template')
+//       const element = card.generateCard()
+//       cardsList.addItem(element)
+//     }
+
+//     //создание экземпляра класса для отрисовки карточек на странице
+//     const cardsList = new Section ({
+//       items: res.items,
+//       renderer: (data => {
+//       createCardFunction(data)
+//       })
+//     }, elementsList)
+//       return cardList
+//     })
+//   .then((res) => {
+//     const { cardsList } = res
+//     cardsList.renderItems()
+//   })
+//   .catch((err) => console.log(err))
+// }
+
+// searchButton.addEventListener('submit', (e) => {
+//   e.preventDefault()
+//   const keyword = input.value
+//   handleSearchVideos(keyword)
+// })
