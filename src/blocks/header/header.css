@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  min-height: 80px;
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+  font-family: 'Robotoslab', Arial, Helvetica, sans-serif;;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #FFF;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 890px) {
+  .header {
+    min-height: 66px;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .header {
+    min-height: 56px;
+  }
+  .logo {
+    font-size: 16px;
+  }
+}

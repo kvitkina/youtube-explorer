@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>YouTube Explorer</title>
+</head>
+<body class="page">
+  <div class="overlay">
+    <header class="header page__section">
+      <a href="https://www.youtube.com/" class="logo">YouTubeExplorer</a>
+    </header>
+
+    <section class="search">
+      <h1 class="search__title">Что есть на YouTube?</h1>
+      <p class="search__subtitle">Находите самые свежие YouTube ролики на любую тему</p>
+      <form class="search__form" novalidate>
+        <input
+          name="keyword"
+          class="search__input"
+          type="text"
+          placeholder="Введите запрос"
+          required
+        />
+        <span class="search__error"></span>
+        <button class="button">Искать</button>
+      </form>
+    </section>
+  </div>
+    <section class="cards page__section">
+      <h2 class="cards__title">Результат поиска по запросу:</h2>
+      <ul class="cards__list">
+        <template class="elements__template">
+          <li class="card">
+            <img src="#" class="card__image" alt=""/>
+            <div class="card__description">
+              <p class="card__date"></p>
+              <div class="card__text-container">
+                <h3 class="card__title"></h3>
+                <p class="card__subtitle"></p>
+              </div>
+              <a href="" target="_blank" rel="noreferrer" class="card__link"></a>
+            </div>
+          </li>
+        </template>
+      </ul>
+    </section>
+
+  <script type="module" src='./scripts/index.js'></script>
+</body>
+</html>

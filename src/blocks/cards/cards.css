@@ -1,0 +1,61 @@
+.cards {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: #F5F6F7;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.cards__title {
+  font-family: 'Robotoslab', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1A1B22;
+  margin: 0 0 64px 0;
+}
+
+.cards__list {
+  padding-left: 0;
+  margin: 0 0 64px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+@media screen and (max-width: 890px) {
+  .cards {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .cards__list {
+    grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .cards__title {
+    margin-bottom: 32px;
+    font-size: 30px;
+    line-height: 34px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cards {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    align-items: center;
+  }
+  .cards__list {
+    grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .cards__title {
+    margin-bottom: 24px;
+    font-size: 30px;
+    line-height: 34px;
+    max-width: 288px;
+  }
+}

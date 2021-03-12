@@ -1,0 +1,43 @@
+.button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 80px;
+  height: 64px;
+  width: 168px;
+  background-color: #2F71E5;
+  color: #FFF;
+  cursor: pointer;
+  transition: all .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.button:hover {
+  background-color: #347EFF;
+}
+
+.button:active {
+  background-color: #2A65CC;
+}
+
+@media screen and (max-width: 890px) {
+  .button {
+    height: 56px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .button {
+    width: 288px;
+    position: relative;
+  }
+}
