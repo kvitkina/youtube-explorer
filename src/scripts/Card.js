@@ -1,6 +1,6 @@
 export class Card {
   constructor({ data }, elementsTemplate) {
-    this._link = data.snippet.thumbnails.default.url
+    this._image = data.snippet.thumbnails.medium.url
     this._title = data.snippet.title
     this._author = data.snippet.channelTitle
     this._date = data.snippet.publishedAt
@@ -19,7 +19,7 @@ export class Card {
     // this._setEventListeners()
 
     this._element.querySelector('.card__title').textContent = this._title
-    this._element.querySelector('.card__image').src = this._link
+    this._element.querySelector('.card__image').src = this._image
     this._element.querySelector('.card__subtitle').textContent = this._author
     this._element.querySelector('.card__date').textContent = this._date
 

@@ -1,7 +1,7 @@
 import { YoutubeApi } from './YoutubeApi.js';
 import { Card } from './Card.js';
 import { Section } from './Section.js';
-import { searchForm, elementsList, input } from './constants.js';
+import { searchForm, elementsList, input, keywordElem } from './constants.js';
 
 //создание экземпляра класса YoutubeApi
 export const youtubeApi = new YoutubeApi ({
@@ -42,4 +42,5 @@ searchForm.addEventListener('submit', (e) => {
   e.preventDefault()
   const keyword = input.value
   handleSearchVideos(keyword)
+  keywordElem.textContent = keyword
 })
