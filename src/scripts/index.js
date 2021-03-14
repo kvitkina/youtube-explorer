@@ -13,15 +13,15 @@ export const youtubeApi = new YoutubeApi ({
 })
 
 const handleSearchVideos = (keyword) => {
+
   youtubeApi.getVideos(keyword)
   .then((res) => {
-    console.log(res)
     //создание карточки
     const createCardFunction = (data) => {
       const card = new Card({data,
-        // handleCardClick: () => {
-        //   popupWithImage.open(data)
-        // },
+        handleTitleClick: () => {
+          card._setEventListeners()
+        },
       }, '.cards__template')
       const element = card.generateCard()
       cardsList.addItem(element)
@@ -34,6 +34,7 @@ const handleSearchVideos = (keyword) => {
       })
     }, elementsList)
      cardsList.renderItems()
+     return { cardsList }
     })
   .catch((err) => console.log(err))
 }

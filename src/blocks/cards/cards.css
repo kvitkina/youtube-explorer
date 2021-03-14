@@ -15,12 +15,16 @@
   color: #1A1B22;
   margin: 0 0 64px 0;
 }
+.cards__title_keyword {
+  font-weight: bold;
+  text-transform: capitalize;
+}
 
 .cards__list {
   padding-left: 0;
   margin: 0 0 64px 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 50% 50%;
   gap: 16px;
 }
 
@@ -30,7 +34,6 @@
     padding-bottom: 40px;
   }
   .cards__list {
-    grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
     gap: 8px;
     margin-bottom: 32px;
   }
