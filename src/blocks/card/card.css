@@ -10,22 +10,17 @@
 .card {
   max-width: 100%;
   width: 100%;
+  padding: 24px;
   box-sizing: border-box;
   background-color: #fff;
   border-radius: 16px;
-  position: relative;
   display: flex;
   flex-direction: column;
   transition: box-shadow .3s;
-  position: relative;
 }
 
 .card:hover {
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
-}
-
-.card__description {
-  padding: 24px;
 }
 
 .card__date {
@@ -58,10 +53,13 @@
   margin: 0 0 16px 0;
   display: none;
   animation: fade 2s;
+  align-items: center;
 }
 
 .card__iframe_active {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .card__video {
@@ -85,20 +83,11 @@
   margin: 0;
 }
 
-.card__link {
-  text-decoration: none;
-  font-family: 'Robotoslab', Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  color: #B6BCBF;
-  cursor: pointer;
-  margin: 0;
-}
-
 @media screen and (max-width: 890px) {
+  .card {
+    padding: 16px;
+  }
+
   .card__title {
     font-size: 22px;
     line-height: 24px;
@@ -106,13 +95,6 @@
   }
   .card__iframe {
     margin-bottom: 10px;
-  }
-  .card__description {
-    padding: 16px;
-  }
-  .card__text-container {
-    min-height: 170px;
-    margin-bottom: 12px;
   }
 }
 
@@ -125,9 +107,8 @@
     line-height: 26px;
     margin-bottom: 10px;
   }
-  .card__text-container {
+  .card__iframe {
     margin-bottom: 8px;
-    min-height: 150px;
   }
   .card__date {
     margin-bottom: 10px;
