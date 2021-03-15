@@ -34,7 +34,6 @@ const handleSearchVideos = (keyword) => {
       })
     }, elementsList)
      cardsList.renderItems()
-     return { cardsList }
     })
   .catch((err) => console.log(err))
 }
