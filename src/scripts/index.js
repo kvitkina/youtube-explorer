@@ -12,28 +12,26 @@ export const youtubeApi = new YoutubeApi ({
   }
 })
 
-const handleSearchVideos = (keyword) => {
+//создание карточки
+const createCardFunction = (data) => {
+  const card = new Card({data,
+  }, '.cards__template')
+  const element = card.generateCard()
+  cardsList.addItem(element)
+}
 
+//создание экземпляра класса для отрисовки карточек на странице
+const cardsList = new Section ({
+  renderer: (data => {
+  createCardFunction(data)
+  })
+}, elementsList)
+
+const handleSearchVideos = (keyword) => {
   youtubeApi.getVideos(keyword)
   .then((res) => {
-    //создание карточки
-    const createCardFunction = (data) => {
-      const card = new Card({data,
-        handleTitleClick: () => {
-          card._setEventListeners()
-        },
-      }, '.cards__template')
-      const element = card.generateCard()
-      cardsList.addItem(element)
-    }
-    //создание экземпляра класса для отрисовки карточек на странице
-    const cardsList = new Section ({
-      items: res.items,
-      renderer: (data => {
-      createCardFunction(data)
-      })
-    }, elementsList)
-     cardsList.renderItems()
+    cardsList.emptyContainer()
+    cardsList.renderItems(res.items)
     })
   .catch((err) => console.log(err))
 }
